@@ -47,29 +47,29 @@ function createInfoBoxes(infoBoxData) {
     const container = document.getElementById('info-boxes-container');
     const serviceName = document.getElementById('service_name');
     serviceName.innerText = infoBoxData['service_name'];
-    //۲
+
+    let htmlString = '';
     infoBoxData['notes'].forEach(box => {
-        const infoBox = document.createElement('div');
-        infoBox.className = 'info-box';
+        htmlString += '<div class="info-box">';
         box.lines.forEach(line => {
-            const infoLine = document.createElement('div');
-            infoLine.className = 'info-line';
-
-            if (line.type === 'attention') {
-                infoLine.classList.add('attention');
-            }
-
-            infoLine.textContent = line.text;
-
-            infoBox.appendChild(infoLine);
+            const className = line.type === 'attention' ? 'info-line attention' : 'info-line';
+            htmlString += `<div class="${className}">${line.text}</div>`;
         });
-
-        container.appendChild(infoBox);
+        htmlString += '</div>';
     });
+
+    container.innerHTML = htmlString;
 }
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', async () => {
+    // Show loading indicator
+    const container = document.getElementById('info-boxes-container');
+    container.innerHTML = '<div class="loading">در حال بارگذاری...</div>';
+
     const infoBoxData = await fetchInfoBoxData();
+
+    // Clear loading indicator
+    container.innerHTML = '';
     createInfoBoxes(infoBoxData);
 });
