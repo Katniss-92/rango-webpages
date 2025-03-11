@@ -47,7 +47,7 @@ function createInfoBoxes(infoBoxData) {
     const container = document.getElementById('info-boxes-container');
     const serviceName = document.getElementById('service_name');
     serviceName.innerText = infoBoxData['service_name'];
-    //
+    //۲
     infoBoxData['notes'].forEach(box => {
         const infoBox = document.createElement('div');
         infoBox.className = 'info-box';
