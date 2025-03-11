@@ -10,7 +10,7 @@ function goHome() {
 }
 
 function confirmPayment() {
-    alert('درخواست شما ثبت شد. لطفا منتظر تأیید بمانید.');
+    window.open("https://t.me/Rango_support_bot", "_blank");
 }
 
 async function fetchInfoBoxData() {
@@ -44,10 +44,10 @@ async function fetchInfoBoxData() {
 }
 
 function createInfoBoxes(infoBoxData) {
-    console.warn('start' + infoBoxData, new Date());
     const container = document.getElementById('info-boxes-container');
-    const serviceName = document.getElementById('service_name');
-    serviceName.innerText = infoBoxData['service_name'];
+    const serviceName = document.getElementsByClassName('service_name highlight');
+    serviceName[0].innerText = infoBoxData['service_name'];
+    serviceName[1].innerText = infoBoxData['service_name'];
 
     let htmlString = '';
     infoBoxData['notes'].forEach(box => {
@@ -60,7 +60,6 @@ function createInfoBoxes(infoBoxData) {
     });
 
     container.innerHTML = htmlString;
-    console.warn('END' + infoBoxData, new Date());
 }
 
 // Initialize the page
@@ -69,9 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('info-boxes-container');
     container.innerHTML = '<div class="loading">در حال بارگذاری...</div>';
 
-    console.warn('start LOAD', new Date());
     const infoBoxData = await fetchInfoBoxData();
-    console.warn('END LOAD' + infoBoxData, new Date());
 
     // Clear loading indicator
     container.innerHTML = '';
