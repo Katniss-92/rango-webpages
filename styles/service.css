@@ -1,3 +1,173 @@
-body{
-    background: var(--color-bg);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+    background-color: #0a0033;
+    color: white;
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 97vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    text-align: right;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.highlight {
+    color: #ff0000;
+    font-weight: 700;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    margin: 15px 0;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.info-line {
+    text-align: right;
+    line-height: 1.5;
+}
+
+.info-line.attention {
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-line.attention::before {
+    content: "×";
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card-info {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card-number {
+    direction: ltr;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.card-holder {
+    font-size: 1.3rem;
+}
+
+.payment-instructions {
+    text-align: center;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.support-info {
+    text-align: center;
+    font-size: 0.9rem;
+    margin: 15px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.action-button {
+    background-color: #00995c;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: auto;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.action-button:hover {
+    background-color: #007a49;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 20px;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+#page1, #page2 {
+    display: none;
+    flex: 1;
+    width: 100%;
+}
+
+.active {
+    display: flex !important;
+    flex-direction: column;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .card-number {
+        font-size: 1.2rem;
+    }
 }
