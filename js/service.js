@@ -45,9 +45,16 @@ async function fetchInfoBoxData() {
 
 function createInfoBoxes(infoBoxData) {
     const container = document.getElementById('info-boxes-container');
+    const priceTag = document.getElementById('price_tag');
+    const cardNumber = document.getElementById('card_number');
+    const cardName = document.getElementById('card_name');
     const serviceName = document.getElementsByClassName('service_name highlight');
     serviceName[0].innerText = infoBoxData['service_name'];
     serviceName[1].innerText = infoBoxData['service_name'];
+    //
+    cardName.innerText = infoBoxData['card_name'];
+    cardNumber.innerText = infoBoxData['card'];
+    priceTag.innerText = infoBoxData['price'];
 
     let htmlString = '';
     infoBoxData['notes'].forEach(box => {
