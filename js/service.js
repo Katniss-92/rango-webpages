@@ -6,7 +6,7 @@ function showPage(pageId) {
 }
 
 function goHome() {
-    window.location.href = '/';
+    window.location.href = '/rango-webpages';
 }
 
 function confirmPayment() {
