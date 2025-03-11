@@ -1,0 +1,128 @@
+body {
+    background-color: var(--color-bg);
+    color: var(--color-white);
+    padding: 20px;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--text-secondary);;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.section-title {
+    margin: 15px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.subscription-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.subscription-card:active {
+    transform: scale(0.98);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.subscription-card.highlighted {
+    border: none;
+    background-color: var(--pro-bg);
+}
+
+.subscription-card.premium {
+    border: none;
+    background-color: var(--plus-bg);
+}
+
+.left-content {
+    text-align: right;
+}
+
+.right-content {
+}
+
+.subscription-type {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.subscription-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.subscription-details {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.price {
+    float: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.note {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 5px 0;
+    position: relative;
+    padding-right: 15px;
+}
+
+.note::before {
+    content: "*";
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .subscription-card {
+        padding: 12px;
+    }
+
+    .subscription-type {
+        font-size: 1.1rem;
+    }
+
+    .subscription-desc, .subscription-details {
+        font-size: 0.8rem;
+    }
+}

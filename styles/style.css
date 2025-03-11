@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+body{
+    --color-bg: #0a0033;
+    --color-white: #ffffff;
+    --border-color: #ffffff7d;
+    --pro-bg: #006d41;
+    --plus-bg: #9b0000;
+    --text-primary: #ffffff;
+    --text-secondary: #FFFFFFCC;
+}

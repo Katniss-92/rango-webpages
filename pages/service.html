@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تایید خرید سرویس</title>
+  <!-- Vazirmatn Font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+      * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          font-family: 'Vazirmatn', sans-serif;
+      }
+
+      body {
+          background-color: #0a0033;
+          color: white;
+          padding: 20px;
+          max-width: 100%;
+          overflow-x: hidden;
+      }
+
+      .container {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          min-height: 97vh;
+      }
+
+      .header {
+      }
+
+      .title {
+          text-align: right;
+          font-size: 1.3rem;
+          margin-bottom: 10px;
+          font-weight: 700;
+      }
+
+      .subtitle {
+          font-size: 1.1rem;
+          margin-bottom: 15px;
+          text-align: right;
+      }
+
+      .highlight {
+          color: #ff0000;
+          font-weight: 700;
+      }
+
+      .divider {
+          height: 1px;
+          background-color: rgba(255, 255, 255, 0.2);
+          width: 100%;
+          margin: 15px 0;
+      }
+
+      .info-box {
+          display: flex;
+          flex-direction: column;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          padding: 15px;
+          margin-bottom: 15px;
+          width: 100%;
+      }
+
+      .info-line {
+          text-align: right;
+          margin-bottom: 8px;
+          line-height: 1.5;
+      }
+
+      .info-line.attention {
+          display: flex;
+          align-items: flex-start;
+      }
+
+      .info-line.attention::before {
+          content: "×";
+          margin-left: 5px;
+          font-weight: bold;
+          font-size: 1.2rem;
+      }
+
+      .card-info {
+          text-align: center;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 15px;
+          padding: 20px;
+          margin: 20px 0;
+          font-size: 1.2rem;
+          font-weight: 700;
+      }
+
+      .card-number {
+          direction: ltr;
+          text-align: center;
+          margin-bottom: 10px;
+          font-size: 1.4rem;
+          letter-spacing: 2px;
+      }
+
+      .card-holder {
+          font-size: 1.3rem;
+      }
+
+      .payment-instructions {
+          text-align: center;
+          line-height: 1.6;
+          margin: 20px 0;
+      }
+
+      .support-info {
+          text-align: center;
+          font-size: 0.9rem;
+          margin: 15px 0;
+          color: rgba(255, 255, 255, 0.7);
+      }
+
+      .action-button {
+          background-color: #00995c;
+          color: white;
+          border: none;
+          padding: 15px;
+          border-radius: 15px;
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-top: auto;
+          cursor: pointer;
+          transition: background-color 0.2s;
+          width: 100%;
+          margin-top: 20px;
+      }
+
+      .action-button:hover {
+          background-color: #007a49;
+      }
+
+      .footer-text {
+          text-align: center;
+          font-size: 0.8rem;
+          color: rgba(255, 255, 255, 0.6);
+          margin-top: 20px;
+      }
+
+      .spacer {
+          flex-grow: 1;
+      }
+
+      #page1, #page2 {
+          display: none;
+          flex: 1;
+          width: 100%;
+      }
+
+      .active {
+          display: flex !important;
+          flex-direction: column;
+      }
+
+      @media (max-width: 480px) {
+          body {
+              padding: 15px;
+          }
+
+          .title {
+              font-size: 1.2rem;
+          }
+
+          .subtitle {
+              font-size: 1rem;
+          }
+
+          .card-number {
+              font-size: 1.2rem;
+          }
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="page1" class="active">
+    <div class="header">
+      <h1 class="title">شما سرویس یکماهه <span class="highlight">پلاس</span> را انتخاب کرده اید.</h1>
+      <h2 class="subtitle">قبل از خرید باید بدانید که:</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-box">
+      <div class="info-line">حجم قابل استفاده این سرویس شامل مجموع ترافیک دانلود و آپلود شما است.</div>
+    </div>
+    
+    
+    <div class="info-box">
+      <div class="info-line">فرآیند فعال سازی حداکثر ۶ ساعت زمان میبرد، ما به محض دریافت سفارش خرید (فیش واریزی) به شما یک سرویس موقت ۱۲ ساعته ۵ گیگابایتی ارائه میدهیم که میتوانید در مدت زمان انتظار تأیید واریز از آن استفاده کنید.</div>
+      <div class="info-line attention">لطفا توجه داشته باشید سرویس موقت فقط یکبار در ماه برای شما ایجاد میشود.</div>
+      <div class="info-line attention">پس از تایید واریز، ما سرویس شما را به صورت خودکار بروزرسانی میکنیم.</div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-line">دو کاربر همزمان میتوانند از این سرویس استفاده کنند.</div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-line">فرآیند فعال سازی از طریق ربات تلگرام انجام میشود.</div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-line">سرور پشتیبان برای این سرویس فعال میباشد. توصیه ما این است که از سرویس پشتیبان تنها در صورت مشاهده اشکال در سرویس اصلی استفاده کنید</div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="footer-text">خرید سرویس به معنای مطالعه شرایط استفاده میباشد.</div>
+
+    <button class="action-button" onclick="showPage('page2')">خرید سرویس</button>
+  </div>
+  
+  
+  
+  <div id="page2">
+    <div class="header">
+      <h1 class="title">شما سرویس یکماهه <span class="highlight">پلاس</span> را انتخاب کرده اید.</h1>
+      <h2 class="subtitle">مراحل خرید:</h2>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="payment-instructions">
+      لطفا مبلغ <strong>۱۵۰ هزار تومان (۱,۵۰۰,۰۰۰ ریال)</strong> را به کارت زیر واریز کنید و فیش/ رسید واریزی را به ربات تلگرام <strong>t.me/Rango_support_bot</strong> ارسال کنید.
+    </div>
+
+    <div class="card-info">
+      <div class="card-number">۶۰۳۷-۹۹۱۲-۲۲۰۴-۷۷۸۹</div>
+      <div class="card-holder">احمد ترکان</div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="support-info">در صورت بروز هرگونه مشکل به پروفایل تلگرام @RangoVpnSupport پیام ارسال کنید.</div>
+
+    <button class="action-button" onclick="confirmPayment()">واریز کردم</button>
+  </div>
+</div>
+
+<script>
+  function showPage(pageId) {
+    document.querySelectorAll('.container > div').forEach(page => {
+      page.classList.remove('active');
+    });
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  function confirmPayment() {
+    alert('درخواست شما ثبت شد. لطفا منتظر تأیید بمانید.');
+  }
+</script>
+</body>
+</html>
