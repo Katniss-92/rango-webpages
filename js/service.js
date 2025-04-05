@@ -10,7 +10,7 @@ function goHome() {
 }
 
 function confirmPayment() {
-    window.open("https://t.me/Rango_support_bot", "_blank");
+    window.open("https://t.me/RangoNetwork_bot", "_blank");
 }
 
 async function fetchInfoBoxData() {
