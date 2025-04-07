@@ -137,7 +137,7 @@
   },
   "paypal": {
     "service_name": "پرداخت پی پال",
-    "price": "[ ۱.۶۹  یورو ]",
+    "price": "[ ۲  یورو ]",
     "card": "@AhmadTorkanRenani",
     "card_name": "PayPal Account",
     "notes": [
