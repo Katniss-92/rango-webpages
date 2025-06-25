@@ -1,0 +1,372 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', 'Inter', sans-serif;
+    background: linear-gradient(180deg, #1a1b3a 0%, #0f1023 100%);
+    color: white;
+    min-height: 100vh;
+    direction: rtl;
+}
+
+/* English text styling */
+.english {
+    font-family: 'Inter', sans-serif !important;
+    direction: ltr;
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.logo-img {
+    width: 300px;
+    object-fit: contain;
+}
+
+.title {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #8B8B8B;
+    position: relative;
+}
+
+.subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #4A4A4A, transparent);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+}
+
+/* Section Styling */
+.subscription-section {
+    border: 2px dashed #4A4A4A;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: right;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4A4A4A;
+}
+
+/* Server Section */
+.server-section {
+    margin-bottom: 20px;
+}
+
+.server-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.server-info {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px 10px 0 0;
+    padding: 12px 20px 0 20px;
+}
+
+.server-flag {
+    display: flex;
+    align-items: center;
+}
+
+.need-support {
+    margin-top: 10px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.flag-placeholder {
+    width: 24px;
+    height: 24px;
+    margin-right: 1px;
+    margin-top: -4px;
+    font-size: 20px;
+}
+
+.server-name {
+    font-family: 'Inter', sans-serif;
+    flex: 1;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.email-btn {
+    color: white;
+}
+
+.copy-btn {
+    font-family: 'Inter', sans-serif;
+    background: transparent;
+    border: 1px solid #6B6B6B;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Server Config */
+.server-config {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 10px;
+    padding: 15px;
+    font-family: 'Inter', monospace;
+    direction: ltr;
+    text-align: left;
+}
+
+.config-text {
+    font-size: 14px;
+    color: #8B8B8B;
+    margin-bottom: 5px;
+}
+
+.config-code {
+    font-size: 12px;
+    line-height: 1.4;
+    word-break: break-all;
+    color: #E0E0E0;
+}
+
+/* Subscription Info */
+.subscription-info {
+    border-top: 1px solid #4A4A4A;
+    padding-top: 20px;
+}
+
+.info-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+/* Status Messages */
+.status-message {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.status-message.inactive p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #E0E0E0;
+}
+
+.buy-service-btn {
+    font-family: 'Vazirmatn', sans-serif;
+    width: 100%;
+    background: #28A745;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-service-btn:hover {
+    background: #218838;
+}
+
+.status-message.active {
+    text-align: right;
+}
+
+.service-info,
+.remaining-time,
+.remaining-traffic {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #E0E0E0;
+}
+
+/* Connection Guide */
+.connection-guide {
+    border: 2px dashed #4A4A4A;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.guide-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.guide-content {
+    display: block;
+}
+
+.guide-step {
+    padding: 0 5px;
+    margin-bottom: 25px;
+}
+
+.guide-step h4 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #E0E0E0;
+}
+
+/* Placeholder Images */
+.app-store-placeholder,
+.screenshot-placeholder {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.app-store-img {
+    width: 200px;
+    object-fit: contain;
+    margin: -60px 0;
+}
+
+.screenshot-img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+}
+
+.support-btn {
+    font-family: 'Vazirmatn', sans-serif;
+    width: 100%;
+    background: #DC3545;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.support-btn:hover {
+    background: #C82333;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .subscription-section,
+    .connection-guide {
+        padding: 15px;
+    }
+
+    .server-info {
+        padding: 10px 15px;
+    }
+
+    .screenshot-img {
+        width: 150px;
+    }
+}
+
+/* Animation for smooth transitions */
+.status-message {
+    transition: all 0.3s ease;
+}
+
+/* Additional styling for expandable guide section */
+.guide-content {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.guide-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.guide-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.guide-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.guide-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
