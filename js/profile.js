@@ -12,3 +12,12 @@ copyButton.addEventListener('click', () => {
             console.error('Failed to copy text: ', error);
         });
 });
+
+function confirmPayment() {
+    window.open("https://t.me/RangoNetwork_bot", "_blank");
+}
+
+
+function buyService() {
+    window.open("/")
+}

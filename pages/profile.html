@@ -54,16 +54,11 @@
             <div class="subscription-info">
                 <h3 class="info-title">اطلاعات اشتراک</h3>
 
-                <!-- Status Messages -->
-                <div class="status-message" style="display: none;">
-                    <p>شما در حال حاضر سرویس فعالی ندارید.</p>
-                </div>
-
                 <div class="status-message active">
                     <p class="service-info">سرویس فعال: ۳۰ گیگابایت ۳۰ روزه</p>
                     <p class="remaining-time">زمان باقی مانده: ۱۷ روز</p>
                     <p class="remaining-traffic">ترافیک باقی مانده: ۱۲ گیگابایت</p>
-                    <button class="buy-service-btn">خرید سرویس</button>
+                    <button class="buy-service-btn" onclick="buyService()">خرید سرویس</button>
                 </div>
             </div>
         </section>
@@ -110,7 +105,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <button class="support-btn">اتصال به پشتیبانی</button>
+        <button class="support-btn" onclick="confirmPayment()">اتصال به پشتیبانی</button>
         <div class="need-support">اگر نمیتوانید به تلگرام وصل بشوید به ما ایمیل ارسال کنید
             <a href="mailto:rangovpnteam@gmail.com" class="email-btn">ارسال ایمیل</a></div>
     </footer>
