@@ -299,6 +299,7 @@ body {
 /* Footer */
 .footer {
     margin-top: auto;
+    margin-bottom: 90px;
 }
 
 .support-btn {
