@@ -45,7 +45,6 @@ function requestService() {
                         connectionHelp.style.display = 'none';
                         remainingDaysElement.style.display = 'none';
                         trafficElement.style.display = 'none';
-                        //
                         activeServiceElement.textContent = 'شما سرویس فعالی ندارید';
                     }
                     //
@@ -55,6 +54,8 @@ function requestService() {
                             connectionHelp.style.display = 'none';
                             serverSection.style.display = 'none';
                         }
+                        serverSection.style.display = 'block';
+                        connectionHelp.style.display = 'block';
 
                         activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
                         remainingDaysElement.textContent = "زمان باقی مانده: " + calculateRemainingDays(parsedResult.service.expire_data) + " روز ";
