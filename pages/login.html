@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANGO VPN</title>
+    <meta name="theme-color" content="#DC3545">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Vazirmatn:wght@300;400;700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div class="logo">
+            <img src="../assets/LOGO-TEXT.png" alt="RANGO VPN Logo" class="logo-img">
+        </div>
+    </header>
+
+    <div class="main-content">
+        <p class="instruction persian">لطفا کد دسترسی خود را وارد کنید</p>
+
+        <div class="input-container">
+            <input type="text" placeholder="Insert you access token here" maxlength="30" class="token-input english"
+                   id="tokenInput">
+            <button class="paste-btn" onclick="pasteFromClipboard()" title="Paste from clipboard">
+                <img src="../assets/paste.svg" alt="Paste Icon" class="paste-icon"/>
+            </button>
+        </div>
+        <p id="errorMessage" class="error-text persian" style="display: none;">ورود ناموفق بود، لطفاً دوباره تلاش
+            کنید</p>
+        <button onclick="authorizeToken()" class="login-btn persian">ورود به پروفایل</button>
+
+        <p class="help-text persian">کد دسترسی را ندارید؟ از <a class="tel-bot" href="#" onclick="openTelegramBot()">ربات
+            تلگرام</a>
+            میتوانید همین الان آن را دریافت کنید</p>
+        <div class="new-user-section">
+            <p class="new-user-title persian">کاربر جدید هستید؟</p>
+            <button class="register-btn persian" onclick="openTelegramBot()">دریافت اکانت تست یک روزه رایگان</button>
+        </div>
+    </div>
+</div>
+<script src="../js/login.js"></script>
+</body>
+</html>

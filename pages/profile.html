@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RANGO VPN</title>
+    <meta name="theme-color" content="#DC3545">
     <link rel="stylesheet" href="../styles/profile.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +27,7 @@
             <h2 class="section-title">اشتراک شما</h2>
 
             <!-- Active Server -->
-            <div class="server-section">
+            <div id="serverSection" class="server-section">
                 <h3 class="server-title">سرور فعال:</h3>
                 <div class="server-info">
                     <div class="server-flag">
@@ -37,12 +38,12 @@
                 </div>
 
                 <div class="server-config">
-                    <p class="config-text">ss://</p>
-                    <p class="config-code">Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpucUJxQT
+                    <p id="configCode" class="config-code">Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpucUJxQT
                         mSQR0s4cW5CNkNBMFlwS2pY@217.154.93.72:44 3/?outline=1</p>
                 </div>
             </div>
-            <div class="need-support">اگر مشکلی در اتصال با این سرور دارید، لطفا با استفاده از گزینه اتصال به پشتیبانی
+            <div id="connectionHelp" class="need-support">اگر مشکلی در اتصال با این سرور دارید، لطفا با استفاده از گزینه
+                اتصال به پشتیبانی
                 در پایین
                 همین
                 صفحه به ما پیام ارسال کنید.
@@ -55,9 +56,9 @@
                 <h3 class="info-title">اطلاعات اشتراک</h3>
 
                 <div class="status-message active">
-                    <p class="service-info">سرویس فعال: ۳۰ گیگابایت ۳۰ روزه</p>
-                    <p class="remaining-time">زمان باقی مانده: ۱۷ روز</p>
-                    <p class="remaining-traffic">ترافیک باقی مانده: ۱۲ گیگابایت</p>
+                    <p id="activeService" class="service-info">...</p>
+                    <p id="remainingDays" class="remaining-time">...</p>
+                    <p id="remainingTraffic" class="remaining-traffic">ترافیک باقی مانده:</p>
                     <button class="buy-service-btn" onclick="buyService()">خرید سرویس</button>
                 </div>
             </div>
