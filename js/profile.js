@@ -50,14 +50,14 @@ function requestService() {
                     //
                     else {
                         configCodeElement.textContent = parsedResult.servers[0].access_key;
-                        if (parsedResult.os === 'ANDROID') {
+                        if (parsedResult.os === 'ANDROID' || parsedResult.os === 'WEB') {
                             connectionHelp.style.display = 'none';
                             serverSection.style.display = 'none';
+                        } else {
+                            serverSection.style.display = 'block';
+                            connectionHelp.style.display = 'block';
+                            activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
                         }
-                        serverSection.style.display = 'block';
-                        connectionHelp.style.display = 'block';
-
-                        activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
                         remainingDaysElement.textContent = "زمان باقی مانده: " + calculateRemainingDays(parsedResult.service.expire_data) + " روز ";
                     }
                 }
