@@ -51,8 +51,10 @@ function requestService() {
                     //
                     else {
                         configCodeElement.textContent = parsedResult.servers[0].access_key;
-                        if (parsedResult.os === 'ANDROID')
+                        if (parsedResult.os === 'ANDROID') {
+                            connectionHelp.style.display = 'none';
                             serverSection.style.display = 'none';
+                        }
 
                         activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
                         remainingDaysElement.textContent = "زمان باقی مانده: " + calculateRemainingDays(parsedResult.service.expire_data) + " روز ";
