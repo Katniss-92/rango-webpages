@@ -94,7 +94,7 @@ function getUserUsage() {
             .then((response) => response.text())
             .then((result) => {
                 const resultJson = JSON.parse(result);
-                if (!!resultJson.usage)
+                if (resultJson.usage !== undefined)
                     document.getElementById("remainingTraffic").textContent = "ترافیک باقی مانده: "
                         + ((resultJson.traffic_limit - resultJson.usage) / 1000).toFixed(1) + " گیگابایت از " + resultJson.traffic_limit / 1000 + " گیگابایت "
             })
