@@ -56,8 +56,8 @@ function requestService() {
                         } else {
                             serverSection.style.display = 'block';
                             connectionHelp.style.display = 'block';
-                            activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
                         }
+                        activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
                         remainingDaysElement.textContent = "زمان باقی مانده: " + calculateRemainingDays(parsedResult.service.expire_data) + " روز ";
                     }
                 }
