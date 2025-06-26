@@ -1,3 +1,7 @@
+* {
+    margin: auto;
+}
+
 body {
     background-color: var(--color-bg);
     color: var(--color-white);
@@ -6,10 +10,26 @@ body {
     overflow-x: hidden;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50%;
+    margin-bottom: 20px;
+
+}
+
 .container {
+    padding: 15px;
+    border-radius: 18px;
+    border: 1px dashed white;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    min-width: 360px;
+    max-width: 450px;
 }
 
 .title {
@@ -67,9 +87,11 @@ body {
 
 .left-content {
     text-align: right;
+    margin: 0;
 }
 
 .right-content {
+    margin: 0;
 }
 
 .subscription-type {
