@@ -39,6 +39,8 @@ function requestService() {
                     const serverSection = document.getElementById("serverSection");
                     const connectionHelp = document.getElementById("connectionHelp");
                     const trafficElement = document.getElementById("remainingTraffic");
+                    const connectionGuidIos = document.getElementById("connectionGuidIos");
+                    const connectionGuidAndroid = document.getElementById("connectionGuidAndroid");
                     //
                     if (parsedResult.service.service_Expired) {
                         serverSection.style.display = 'none';
@@ -51,9 +53,13 @@ function requestService() {
                     else {
                         configCodeElement.textContent = parsedResult.servers[0].access_key;
                         if (parsedResult.os === 'ANDROID' || parsedResult.os === 'WEB') {
+                            connectionGuidAndroid.style.display = 'block';
+                            connectionGuidIos.style.display = 'none';
                             connectionHelp.style.display = 'none';
                             serverSection.style.display = 'none';
                         } else {
+                            connectionGuidIos.style.display = 'block';
+                            connectionGuidAndroid.style.display = 'none';
                             serverSection.style.display = 'block';
                             connectionHelp.style.display = 'block';
                         }
