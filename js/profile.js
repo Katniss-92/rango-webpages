@@ -31,27 +31,29 @@ function requestService() {
             .then((response) => response.text())
             .then((result) => {
                 const parsedResult = JSON.parse(result);
-                //
-                const configCodeElement = document.getElementById("configCode");
-                const activeServiceElement = document.getElementById("activeService");
-                const remainingDaysElement = document.getElementById("remainingDays");
-                const serverSection = document.getElementById("serverSection");
-                const connectionHelp = document.getElementById("connectionHelp");
-                const trafficElement = document.getElementById("remainingTraffic");
-                //
-                if (parsedResult.service.service_Expired) {
-                    serverSection.style.display = 'none';
-                    connectionHelp.style.display = 'none';
-                    remainingDaysElement.style.display = 'none';
-                    trafficElement.style.display = 'none';
+                if (parsedResult.service) {
                     //
-                    activeServiceElement.textContent = 'شما سرویس فعالی ندارید';
-                }
-                //
-                else {
-                    configCodeElement.textContent = parsedResult.servers[0].access_key;
-                    activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
-                    remainingDaysElement.textContent = "زمان باقی مانده: " + calculateRemainingDays(parsedResult.service.expire_data) + " روز ";
+                    const configCodeElement = document.getElementById("configCode");
+                    const activeServiceElement = document.getElementById("activeService");
+                    const remainingDaysElement = document.getElementById("remainingDays");
+                    const serverSection = document.getElementById("serverSection");
+                    const connectionHelp = document.getElementById("connectionHelp");
+                    const trafficElement = document.getElementById("remainingTraffic");
+                    //
+                    if (parsedResult.service.service_Expired) {
+                        serverSection.style.display = 'none';
+                        connectionHelp.style.display = 'none';
+                        remainingDaysElement.style.display = 'none';
+                        trafficElement.style.display = 'none';
+                        //
+                        activeServiceElement.textContent = 'شما سرویس فعالی ندارید';
+                    }
+                    //
+                    else {
+                        configCodeElement.textContent = parsedResult.servers[0].access_key;
+                        activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
+                        remainingDaysElement.textContent = "زمان باقی مانده: " + calculateRemainingDays(parsedResult.service.expire_data) + " روز ";
+                    }
                 }
             })
             .catch((error) => {
@@ -80,8 +82,9 @@ function getUserUsage() {
             .then((response) => response.text())
             .then((result) => {
                 const resultJson = JSON.parse(result);
-                document.getElementById("remainingTraffic").textContent = "ترافیک باقی مانده: "
-                    + ((resultJson.traffic_limit - resultJson.usage) / 1000).toFixed(1) + " گیگابایت از " + resultJson.traffic_limit / 1000 + " گیگابایت "
+                if (resultJson.usage)
+                    document.getElementById("remainingTraffic").textContent = "ترافیک باقی مانده: "
+                        + ((resultJson.traffic_limit - resultJson.usage) / 1000).toFixed(1) + " گیگابایت از " + resultJson.traffic_limit / 1000 + " گیگابایت "
             })
             .catch((error) => {
                 if (error.response && error.response.status === 401) {
