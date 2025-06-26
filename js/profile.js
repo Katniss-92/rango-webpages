@@ -48,10 +48,11 @@ function requestService() {
                     activeServiceElement.textContent = 'شما سرویس فعالی ندارید';
                 }
                 //
-                configCodeElement.textContent = parsedResult.servers[0].access_key;
-                activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
-                remainingDaysElement.textContent = "زمان باقی مانده: " + calculateRemainingDays(parsedResult.service.expire_data) + " روز ";
-
+                else {
+                    configCodeElement.textContent = parsedResult.servers[0].access_key;
+                    activeServiceElement.textContent = "سرویس فعال: " + parsedResult.service.service_name;
+                    remainingDaysElement.textContent = "زمان باقی مانده: " + calculateRemainingDays(parsedResult.service.expire_data) + " روز ";
+                }
             })
             .catch((error) => {
                 if (error.response && error.response.status === 401) {
