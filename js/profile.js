@@ -4,13 +4,51 @@ const copyButton = document.querySelector('.copy-btn');
 const configCode = document.querySelector('.config-code');
 window.onload = () => {
     const bearerToken = localStorage.getItem('bearerToken');
-    if (!bearerToken) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get("token");
+    if (!bearerToken && !token) {
         window.location.href = '../pages/login'; // Redirect to login page
+    } else if (!bearerToken && !!token) {
+        authorizeToken(token)
     } else {
         requestService();
         getUserUsage();
     }
 };
+
+async function authorizeToken(token) {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+        accessToken: token
+    });
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+    try {
+        const response = await fetch(`${APP_URL}/authorize`, requestOptions);
+        const result = await response.json();
+
+        if (result.bearerToken) {
+            localStorage.setItem("bearerToken", result.bearerToken);
+            console.log("Bearer token saved to localStorage:", result.bearerToken);
+            requestService();
+            getUserUsage();
+        } else {
+            window.location.href = '../pages/login';
+
+        }
+    } catch (error) {
+        window.location.href = '../pages/login';
+    }
+}
+
 
 function requestService() {
     const bearerToken = localStorage.getItem('bearerToken');
