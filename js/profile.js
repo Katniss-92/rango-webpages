@@ -8,7 +8,7 @@ window.onload = () => {
     const token = urlParams.get("token");
     if (!bearerToken && !token) {
         window.location.href = '../pages/login'; // Redirect to login page
-    } else if (!bearerToken && !!token) {
+    } else if (!!token) {
         authorizeToken(token)
     } else {
         requestService();
