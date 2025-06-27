@@ -1,3 +1,6 @@
+const APP_URL = "https://api.rangonet.de";
+
+
 function selectSubscription(plan) {
     console.log('Selected plan:', plan);
     window.location.href = 'pages/service.html?plan=' + plan;
@@ -7,13 +10,13 @@ function selectFreeAccount() {
     window.open("https://t.me/RangoNetwork_bot", "_blank");
 }
 
-// Global variable to store subscription data
 let subscriptionsData = null;
 
-// Function to load subscriptions from JSON file
 async function loadSubscriptions() {
     try {
-        const response = await fetch('../contents/subscriptions.json');
+        const response = await fetch(APP_URL + "/profile/serviceinfo", {
+            method: "GET",
+        });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -27,23 +30,21 @@ async function loadSubscriptions() {
     }
 }
 
-// Function to render subscription cards
 function renderSubscriptions() {
     const container = document.getElementById('subscriptions-container');
 
-    if (!subscriptionsData || !subscriptionsData.subscriptions) {
+    if (!subscriptionsData || !subscriptionsData.SERVICE_PLANS) {
         container.innerHTML = '<div style="text-align: center; padding: 20px;">داده‌ای یافت نشد</div>';
         return;
     }
-
     let html = '';
-    subscriptionsData.subscriptions.forEach(subscription => {
+    Object.values(subscriptionsData.SERVICE_PLANS).forEach(subscription => {
         const cssClass = subscription.cssClass ? ` ${subscription.cssClass}` : '';
 
         html += `
             <div class="subscription-card${cssClass}" onclick="selectSubscription('${subscription.id}')">
                 <div class="right-content">
-                    <div class="subscription-type">${subscription.type}</div>
+                    <div class="subscription-type">${subscription.name}</div>
                     <div class="subscription-desc">${subscription.description}</div>
                 </div>
                 <div class="left-content">
